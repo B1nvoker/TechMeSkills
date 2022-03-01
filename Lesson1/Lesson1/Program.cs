@@ -26,7 +26,7 @@ namespace Lesson1
                 Console.Write("Введите длину катета АВ: ");
                 double AB = double.Parse(Console.ReadLine());
 
-                Console.Write("Введите длину катеа BC: ");
+                Console.Write("Введите длину катета BC: ");
                 double BC = double.Parse(Console.ReadLine());
 
                 Console.Write("Введите длину гипотенузы AC: ");
@@ -58,7 +58,7 @@ namespace Lesson1
                     namesOfCorners += " C";
                     Console.WriteLine(namesOfCorners);
 
-                    Console.WriteLine("\nДля получения ответов клавишу нажмите Enter");
+                    Console.WriteLine("\nДля получения ответов нажмите клавишу Enter");
                     Console.ReadLine();
 
                     Console.WriteLine("Ответы:\n");
