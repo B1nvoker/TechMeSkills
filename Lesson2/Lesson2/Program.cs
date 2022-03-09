@@ -36,7 +36,7 @@ namespace Lesson2
             Console.Write("Please write radius: ");
             int radius = int.Parse(Console.ReadLine());
 
-            bool stateForSecondTask = Math.Pow(x1, 2) + Math.Pow(x1, 2) < Math.Pow(radius, 2);
+            bool stateForSecondTask = Math.Pow(x1, 2) + Math.Pow(y1, 2) < Math.Pow(radius, 2);
 
             Console.Write("Result:");
             Console.WriteLine(stateForSecondTask);
