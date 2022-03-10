@@ -307,6 +307,47 @@ namespace Lesson3
                 Console.WriteLine("Triangle doesn't exists");
                 Console.ReadLine();
             }
+
+            // Task 7 //
+
+            Console.WriteLine("Task 7");
+
+            Console.WriteLine("Write X");
+
+            double firstNumberForSeventhTask = double.Parse(Console.ReadLine());
+
+            double result = 0;
+
+            if (firstNumberForSeventhTask < -7 && firstNumberForSeventhTask > 6)
+            {
+                Console.WriteLine("функция не определена");
+                Console.ReadLine();
+            }
+            else
+            {
+                if (firstNumberForSeventhTask >= -7 && firstNumberForSeventhTask < -6)
+                {
+                    result = -3;
+                }
+                else if (firstNumberForSeventhTask >= -6 && firstNumberForSeventhTask < -3)
+                {
+                    result = firstNumberForSeventhTask + 3;
+                }
+                else if (firstNumberForSeventhTask >= -3 && firstNumberForSeventhTask < 0)
+                {
+                    result = Math.Sqrt(9 - Math.Pow(firstNumberForSeventhTask, 2));
+                }
+                else if (firstNumberForSeventhTask >= 0 && firstNumberForSeventhTask < 3)
+                {
+                    result = 3 - firstNumberForSeventhTask;
+                }
+                else if (firstNumberForSeventhTask >= 3 && firstNumberForSeventhTask <= 6)
+                {
+                    result = firstNumberForSeventhTask - 3;
+                }
+                Console.WriteLine($"Y = {result}");
+                Console.ReadLine();
+            }
         }
     }
 }
