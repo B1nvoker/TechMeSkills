@@ -24,7 +24,7 @@ namespace Lesson4
 
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Task 1\n");
+            Console.WriteLine("Task 1\n");
             Console.Write("Write a number: ");
             int numberForFirstTask = int.Parse(Console.ReadLine());
             Console.Write("Result: ");
@@ -126,7 +126,7 @@ namespace Lesson4
             }
             Console.Write("Result: ");
             Console.WriteLine(firstNumberForFifthTask + secondNumberForFifhTask);
-            Console.ReadLine();*/
+            Console.ReadLine();
 
 
             Console.WriteLine("\nTask 7\n");
