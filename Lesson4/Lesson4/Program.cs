@@ -24,7 +24,7 @@ namespace Lesson4
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Task 1\n");
+            /*Console.WriteLine("Task 1\n");
             Console.Write("Write a number: ");
             int numberForFirstTask = int.Parse(Console.ReadLine());
             Console.Write("Result: ");
@@ -55,16 +55,16 @@ namespace Lesson4
             Console.WriteLine("\nTask 3\n");
             Console.Write("Write a number: ");
             int numberForThirdTask = int.Parse(Console.ReadLine());
-            int i = numberForThirdTask - 1;
-            for (; i > 0; i--)
+            int number = numberForThirdTask - 1;
+            for (; number > 0; number--)
             {
-                if (numberForThirdTask % i == 0)
+                if (numberForThirdTask % number == 0)
                 {
                     break;
                 }
             }
             Console.Write("Result: ");
-            Console.WriteLine(i);
+            Console.WriteLine(number);
             Console.ReadLine();
 
             Console.WriteLine("\nTask 4\n");
@@ -126,8 +126,26 @@ namespace Lesson4
             }
             Console.Write("Result: ");
             Console.WriteLine(firstNumberForFifthTask + secondNumberForFifhTask);
+            Console.ReadLine();*/
+
+
+            Console.WriteLine("\nTask 7\n");
+            Console.Write("Write first number: ");
+            int numberForSevenththTask = int.Parse(Console.ReadLine());
+            int tempForSevenththTask = 1;
+            int resultForSevenththTask = 0;
+            while(tempForSevenththTask < numberForSevenththTask)
+            {
+                int digit = numberForSevenththTask / tempForSevenththTask % 10;
+                if (digit % 2 != 0)
+                {
+                    resultForSevenththTask++;
+                }
+                tempForSevenththTask *= 10;
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(resultForSevenththTask);
             Console.ReadLine();
-            
 
 
         }
