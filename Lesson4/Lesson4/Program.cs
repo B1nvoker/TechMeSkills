@@ -21,20 +21,115 @@ namespace Lesson4
         10) Пользователь вводит два числа.Сообщите, есть ли в написании двух чисел одинаковые цифры. Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
         */
 
-        
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Task 1");
-            Console.WriteLine("Write a number");
-            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine("Task 1\n");
+            Console.Write("Write a number: ");
+            int numberForFirstTask = int.Parse(Console.ReadLine());
+            Console.Write("Result: ");
             for (int i = 1; i <= 1000; i++)
             {
-                if (i % number == 0)
+                if (i % numberForFirstTask == 0)
                 {
-                    Console.WriteLine(i);
+                    Console.Write($"{i} ");
                 }
             }
             Console.ReadLine();
+
+            Console.WriteLine("\nTask 2\n");
+            Console.Write("Write a number: ");
+            int numberForSecondTask = int.Parse(Console.ReadLine());
+            int resultForSecondTask = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                if (Math.Pow(i,2) < numberForSecondTask)
+                {
+                    resultForSecondTask++;
+                }
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(resultForSecondTask);
+            Console.ReadLine();
+
+            Console.WriteLine("\nTask 3\n");
+            Console.Write("Write a number: ");
+            int numberForThirdTask = int.Parse(Console.ReadLine());
+            int i = numberForThirdTask - 1;
+            for (; i > 0; i--)
+            {
+                if (numberForThirdTask % i == 0)
+                {
+                    break;
+                }
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(i);
+            Console.ReadLine();
+
+            Console.WriteLine("\nTask 4\n");
+            Console.Write("Write first number: ");
+            int firstNumberForForthTask = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumberForForthTask = int.Parse(Console.ReadLine());
+            int resultForForthTask = 0;
+            if(firstNumberForForthTask > secondNumberForForthTask)
+            {
+                for(int i = secondNumberForForthTask; i < firstNumberForForthTask; i++)
+                {
+                    if(i % 7 == 0)
+                    {
+                        resultForForthTask += i;
+                    }
+                }
+            }
+            else if (firstNumberForForthTask < secondNumberForForthTask) 
+            {
+                for (int i = firstNumberForForthTask; i < secondNumberForForthTask; i++)
+                {
+                    if (i % 7 == 0)
+                    {
+                        resultForForthTask += i;
+                    }
+                }
+            }
+            else
+            {
+                resultForForthTask = firstNumberForForthTask;
+            }
+
+            Console.Write("Result: ");
+            Console.WriteLine(resultForForthTask);
+            Console.ReadLine();
+
+            
+            Console.WriteLine("\nTask 5\n");
+            Console.Write("Write first number: ");
+            int firstNumberForFifthTask = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumberForFifhTask = int.Parse(Console.ReadLine());
+
+            while (firstNumberForFifthTask != 0 || secondNumberForFifhTask != 0)
+            {
+                if (firstNumberForFifthTask > secondNumberForFifhTask)
+                {
+                    if (secondNumberForFifhTask == 0)
+                    { break; }
+                    firstNumberForFifthTask = firstNumberForFifthTask % secondNumberForFifhTask;
+                }
+                else
+                {
+                    if (firstNumberForFifthTask == 0)
+                    { break; }
+                    secondNumberForFifhTask = secondNumberForFifhTask % firstNumberForFifthTask;
+                }
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(firstNumberForFifthTask + secondNumberForFifhTask);
+            Console.ReadLine();
+            
+
+
         }
     }
 }
