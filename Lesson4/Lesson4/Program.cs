@@ -24,6 +24,7 @@ namespace Lesson4
 
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Task 1\n");
             Console.Write("Write a number: ");
             int numberForFirstTask = int.Parse(Console.ReadLine());
@@ -97,7 +98,6 @@ namespace Lesson4
             {
                 resultForForthTask = firstNumberForForthTask;
             }
-
             Console.Write("Result: ");
             Console.WriteLine(resultForForthTask);
             Console.ReadLine();
@@ -130,7 +130,7 @@ namespace Lesson4
 
 
             Console.WriteLine("\nTask 7\n");
-            Console.Write("Write first number: ");
+            Console.Write("Write number: ");
             int numberForSevenththTask = int.Parse(Console.ReadLine());
             int tempForSevenththTask = 1;
             int resultForSevenththTask = 0;
@@ -145,6 +145,57 @@ namespace Lesson4
             }
             Console.Write("Result: ");
             Console.WriteLine(resultForSevenththTask);
+            Console.ReadLine();
+
+
+            Console.WriteLine("\nTask 8\n");
+            Console.Write("Write number: ");
+            int numberForSevethTask = int.Parse(Console.ReadLine());
+            int firstTempForSevenththTask = 1;
+            int digits = (int)Math.Log10(numberForSevethTask);
+            int secondTempForSevenththTask = (int)Math.Pow(10, digits);
+            int resultForSeventhTask = 0;
+            while (firstTempForSevenththTask < numberForSevethTask)
+            {
+                int digit = numberForSevethTask / firstTempForSevenththTask % 10;
+                resultForSeventhTask += digit * secondTempForSevenththTask;
+                firstTempForSevenththTask *= 10;
+                secondTempForSevenththTask /=10;
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(resultForSeventhTask);
+            Console.ReadLine();
+
+
+            Console.WriteLine("\nTask 9\n");
+            Console.Write("Write number: ");
+            int numberForEighthTask = int.Parse(Console.ReadLine());
+            Console.Write("Result: ");
+            for (int i = 1; i <= numberForEighthTask; i++)
+            {
+                int firstTempForEighthththTask = 1;
+                int sumOfEvenNumbers = 0;
+                int sumOfOddDigits = 0;
+                
+                while (firstTempForEighthththTask <= i)
+                {
+                    int digit = i / firstTempForEighthththTask % 10;
+                    if (digit % 2 == 0)
+                    {
+                        sumOfEvenNumbers += digit;
+                    }
+                    else
+                    {
+                        sumOfOddDigits += digit;
+                    }
+
+                    firstTempForEighthththTask *= 10;
+                }
+                if (sumOfEvenNumbers > sumOfOddDigits)
+                {
+                    Console.Write($"{i} ");
+                }
+            }
             Console.ReadLine();
 
 
