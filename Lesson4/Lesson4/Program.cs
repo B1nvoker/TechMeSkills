@@ -24,7 +24,7 @@ namespace Lesson4
 
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine("Task 1\n");
             Console.Write("Write a number: ");
             int numberForFirstTask = int.Parse(Console.ReadLine());
@@ -198,6 +198,39 @@ namespace Lesson4
             }
             Console.ReadLine();
 
+            
+            Console.WriteLine("\nTask 10\n");
+            Console.Write("Write first number: ");
+            int firstNumberForTenthTask = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumberForTenthTask = int.Parse(Console.ReadLine());
+            bool result = false;
+            int firstTempForTenthththTask = 1;
+            int secondTempForTenthththTask = 1;
+
+            while (firstTempForTenthththTask <= firstNumberForTenthTask)
+            {
+                int digit = firstNumberForTenthTask / firstTempForTenthththTask % 10;
+                while (secondTempForTenthththTask <= secondNumberForTenthTask)
+                {
+                    int digit2 = secondNumberForTenthTask / secondTempForTenthththTask % 10;
+                    secondTempForTenthththTask *= 10;
+                    if(digit == digit2)
+                    {
+                        result = true;
+                        break;  
+                    }
+                }
+                if (result)
+                {
+                    break;
+                }
+                secondTempForTenthththTask = 1;
+                firstTempForTenthththTask *= 10;
+            }
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
 
         }
     }
