@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Lesson5
@@ -12,10 +12,11 @@ namespace Lesson5
     {
         static void Main(string[] args)
         {
-            int[] initArray()
+            int[] initArray(int len)
             {
                 Random rnd = new Random();
-                int[] array = new int[20];
+
+                int[] array = new int[len];
 
                 for (int i = 0; i < array.Length; i++)
                 {
@@ -23,6 +24,7 @@ namespace Lesson5
                 }
                 return array;
             }
+
             void printArray(int[] array)
             {
                 for (int i = 0; i < array.Length; i++)
@@ -32,24 +34,36 @@ namespace Lesson5
                 Console.WriteLine("");
             }
 
+            int writeLengthOfArray()
+            {
+                Console.Write("\nWrite a number of element in array: ");
+                int arrayLength = int.Parse(Console.ReadLine());
+
+                return arrayLength;
+            }
+
             //1) Посчитать количества нечетных и четных элементов массива.Не путать с нечетными и четными индексами.
 
             void task1()
             {
-                Console.WriteLine("Task 1");
-                int[] arr = initArray();
-                int sumOfEvenNumbers = 0;
-                int sumOfOddNumbers = 0;
+                Console.WriteLine("Task 1\nПосчитать количества нечетных и четных элементов массива.Не путать с нечетными и четными индексами.");
+
+                int arrayLength = writeLengthOfArray();
+
+                int[] arr = initArray(arrayLength);
                 printArray(arr);
+
+                int sumOfEvenNumbers = 0,
+                    sumOfOddNumbers = 0;
 
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    _ = arr[i] % 2 == 0 ? sumOfEvenNumbers++ : sumOfOddNumbers ++;
+                    _ = arr[i] % 2 == 0 ? sumOfEvenNumbers++ : sumOfOddNumbers++;
                 }
 
                 Console.WriteLine($"\nEven Numbers: {sumOfEvenNumbers}");
                 Console.WriteLine($"Odd Numbers: {sumOfOddNumbers}");
-                Console.WriteLine("Press any key to exit");
+                Console.WriteLine("\nPress Enter to continue");
                 Console.ReadLine();
             }
 
@@ -57,8 +71,11 @@ namespace Lesson5
 
             void task2()
             {
-                Console.WriteLine("Task 2");
-                int[] arr = initArray();
+                Console.WriteLine("Task 2\nКаждый третий элемент массива заменить суммой двух предыдущих элементов.");
+
+                int arrayLength = writeLengthOfArray();
+
+                int[] arr = initArray(arrayLength);
                 printArray(arr);
 
                 for (int i = 2; i < arr.Length; i += 3)
@@ -68,6 +85,7 @@ namespace Lesson5
 
                 Console.WriteLine("\nResult: ");
                 printArray(arr);
+                Console.WriteLine("\nPress Enter to continue");
                 Console.ReadLine();
             }
 
@@ -75,19 +93,66 @@ namespace Lesson5
 
             void task3()
             {
-                Console.WriteLine("Task 3");
-                int[] firstArr = initArray();
-                int[] secondArr = initArray();
+                Console.WriteLine("Task 3\nСлить два целочисленных массива в один(должен получиться третий массив");
+
+                int arraysLength = writeLengthOfArray();
+
+                int[] firstArr = initArray(arraysLength);
+                Console.WriteLine("\nFirst array: ");
                 printArray(firstArr);
+
+                Thread.Sleep(1000);
+
+                int[] secondArr = initArray(arraysLength);
+                Console.WriteLine("\nSecond array: ");
                 printArray(secondArr);
 
+                int[] resultArr = new int[firstArr.Length + secondArr.Length];
 
+                int tempForFirstArr = 0,
+                    tempForSecondArr = 0,
+                    tempForResultArray = firstArr.Length;
 
+                while (tempForFirstArr < firstArr.Length)
+                {
+                    resultArr[tempForFirstArr] = firstArr[tempForFirstArr];
+                    resultArr[tempForResultArray] = secondArr[tempForSecondArr];
+                    tempForFirstArr++;
+                    tempForSecondArr++;
+                    tempForResultArray++;
+                }
+
+                Console.WriteLine("\nResult array: ");
+                printArray(resultArr);
+                Console.WriteLine("\nPress Enter to continue");
                 Console.ReadLine();
             }
 
 
             //4) Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2,  или для 1 2 3 4 5 - 4 5 1 2 3
+
+            void task4()
+            {
+                Console.WriteLine("Task 2\nПоменять местами первую и вторую половину массива");
+
+                int arrayLength = writeLengthOfArray();
+
+                int[] arr = initArray(arrayLength);
+                printArray(arr);
+
+                for (int i = 0, j = arr.Length / 2; i < arr.Length / 2; i++, j++)
+                {
+                    int tempForFirstPartOfArr = arr[i];
+                    int tempForSecondPartOfArr = arr[j];
+                    arr[i] = tempForSecondPartOfArr;
+                    arr[j] = tempForFirstPartOfArr;
+                }
+
+                Console.WriteLine("\nResult: ");
+                printArray(arr);
+                Console.WriteLine("\nPress Enter to continue");
+                Console.ReadLine();
+            }
 
             //5) Циклически двинуть массив вправо на 1 элемент.Например: 1 2 3 4 5-> 5 1 2 3 4.А после этого сделать циклический сдвиг вправо на N элементов.
 
@@ -103,9 +168,10 @@ namespace Lesson5
 
             //9) Отсортировать массив по возрастанию алгоритмом выборки(select).
             //Определить для себя вариацию алгоритма для сортировки по убыванию(реализовывать не обязательно).
-            task1();
+            /*task1();
             task2();
-            task3();
+            task3();*/
+            task4();
         }
     }
 }
