@@ -133,19 +133,24 @@ namespace Lesson5
 
             void task4()
             {
-                Console.WriteLine("Task 2\nПоменять местами первую и вторую половину массива");
+                Console.WriteLine("Task 4\nПоменять местами первую и вторую половину массива");
 
                 int arrayLength = writeLengthOfArray();
 
                 int[] arr = initArray(arrayLength);
                 printArray(arr);
 
-                for (int i = 0, j = arr.Length / 2; i < arr.Length / 2; i++, j++)
+
+                for (int j = 0; j < arr.Length / 2; j++)
                 {
-                    int tempForFirstPartOfArr = arr[i];
-                    int tempForSecondPartOfArr = arr[j];
-                    arr[i] = tempForSecondPartOfArr;
-                    arr[j] = tempForFirstPartOfArr;
+                    int tmp = arr[arr.Length - 1];
+
+                    for (var i = arr.Length - 1; i != 0; --i)
+                    {
+                        arr[i] = arr[i - 1];
+                    }
+
+                    arr[0] = tmp;
                 }
 
                 Console.WriteLine("\nResult: ");
@@ -156,12 +161,105 @@ namespace Lesson5
 
             //5) Циклически двинуть массив вправо на 1 элемент.Например: 1 2 3 4 5-> 5 1 2 3 4.А после этого сделать циклический сдвиг вправо на N элементов.
 
-            //(очевидная подсказка: завернуть циклический сдвиг вправо на 1 элемент в еще один цикл на N итераций).
+            void task5()
+            {
+                Console.WriteLine("Task 5\nПоменять местами первую и вторую половину массива");
+
+                int arrayLength = writeLengthOfArray();
+
+                Console.Write("\nВведите на сколько элементов хотите сдвинуть массив");
+                int n = int.Parse(Console.ReadLine());
+
+                int[] arr = initArray(arrayLength);
+                printArray(arr);
+
+
+                for (int j = 0; j < n; j++)
+                {
+                    int tmp = arr[arr.Length - 1];
+
+                    for (var i = arr.Length - 1; i != 0; --i)
+                    {
+                        arr[i] = arr[i - 1];
+                    }
+
+                    arr[0] = tmp;
+                }
+
+                Console.WriteLine("\nResult: ");
+                printArray(arr);
+                Console.WriteLine("\nPress Enter to continue");
+                Console.ReadLine();
+            }
 
             //6) Преобразовать массив так, чтобы на четных позициях стояли элементы с нечетных позиций, и наоборот. Сделать за O(N / 2).
 
+            void task6(){
+
+                Console.WriteLine("Task 6\nПреобразовать массив так, чтобы на четных позициях стояли элементы с нечетных позиций, и наоборот");
+
+                int arrayLength = writeLengthOfArray();
+
+                int[] arr = initArray(arrayLength);
+                printArray(arr);
+
+                for (int i=0; i < arr.Length; i+=2)
+                {
+                    int tempEven = arr[i];
+                    int tempOdd = arr[i + 1];
+                    arr[i] = tempOdd;
+                    arr[i + 1] = tempEven;
+                }
+
+                Console.WriteLine("\nResult: ");
+                printArray(arr);
+                Console.WriteLine("\nPress Enter to continue");
+                Console.ReadLine();
+
+            }
+
             //7) В массиве из целочисленных элементов(включая отрицательные) вычислить: а) минимальный по модулю элемент массива;
             //б) сумму элементов, расположенных после первого нулевого элемента(элемента, равного нулю). Сделать одним проходом цикла!
+
+            void task7(){
+
+                Console.WriteLine("Task 7\nВ массиве из целочисленных элементов(включая отрицательные) вычислить: а) минимальный по модулю элемент массива;б) сумму элементов, расположенных после первого нулевого элемента(элемента, равного нулю). Сделать одним проходом цикла!");
+
+                int arrayLength = writeLengthOfArray();
+
+                int[] arr = initArray(arrayLength);
+
+                printArray(arr);
+
+                int min = arr[0],
+                    sum = 0;
+                bool flag = false;
+
+                for (int i = 0; i < arr.Length; i++) 
+                {
+                    if (Math.Abs(arr[i]) < Math.Abs(min)) 
+                    {
+                        min = arr[i];
+                    }
+                    if (arr[i] == 0)
+                    {
+                        flag = true;
+                    }
+                    if (flag)
+                    {
+                        sum += arr[i];
+                    }
+                }
+
+                Console.WriteLine("\nResult: ");
+                printArray(arr);
+                Console.Write("\nMin: ");
+                Console.WriteLine(min);
+                Console.Write("\nSum: ");
+                Console.WriteLine(sum);
+                Console.WriteLine("\nPress Enter to continue");
+                Console.ReadLine();
+            }
 
             //8) Отсортировать массив по возрастанию алгоритмом вставок(insert).
             //Определить для себя вариацию алгоритма для сортировки по убыванию(реализовывать не обязательно).
@@ -170,8 +268,12 @@ namespace Lesson5
             //Определить для себя вариацию алгоритма для сортировки по убыванию(реализовывать не обязательно).
             /*task1();
             task2();
-            task3();*/
+            task3();
             task4();
+            task5();
+            task6();*/
+            task7();
+
         }
     }
 }
