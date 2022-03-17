@@ -140,7 +140,6 @@ namespace Lesson5
                 int[] arr = initArray(arrayLength);
                 printArray(arr);
 
-
                 for (int j = 0; j < arr.Length / 2; j++)
                 {
                     int tmp = arr[arr.Length - 1];
@@ -172,7 +171,6 @@ namespace Lesson5
 
                 int[] arr = initArray(arrayLength);
                 printArray(arr);
-
 
                 for (int j = 0; j < n; j++)
                 {
@@ -266,12 +264,12 @@ namespace Lesson5
 
             //9) Отсортировать массив по возрастанию алгоритмом выборки(select).
             //Определить для себя вариацию алгоритма для сортировки по убыванию(реализовывать не обязательно).
-            /*task1();
+            task1();
             task2();
             task3();
             task4();
             task5();
-            task6();*/
+            task6();
             task7();
 
         }
