@@ -15,6 +15,7 @@ namespace Homework
                     Console.Write($"{array[i]}\t");
                 Console.WriteLine();
             }
+            Console.ReadLine();
         }
     }
 }

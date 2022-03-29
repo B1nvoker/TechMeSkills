@@ -160,11 +160,76 @@ namespace Homework
         #region Lesson3
 
         #region Task1
+        private static void countTwoNumber()
+        {
+            Console.WriteLine("Task 1");
 
+            Console.Write("Write first number: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+
+            Console.Write("Write second number: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+
+            int result = Lesson3.countTwoNumbers(firstNumber, secondNumber);
+
+            Console.WriteLine($"Result: {result}");
+            Console.ReadLine();
+        }
+        #endregion
+        #region Task2
+        private static void getWhatQuarterIsNumberIn()
+        {
+            Console.WriteLine("Task 2");
+
+            Console.WriteLine("Write first number");
+            int firstNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write second number");
+            int secondNumber = int.Parse(Console.ReadLine());
+
+            int result = Lesson3.getWhatQuarterIsNumberIn(firstNumber, secondNumber);
+
+            Console.WriteLine($"Result: {result}");
+            Console.ReadLine();
+        }
+        #endregion
+        #region Task3
+        private static void sortTreeNumbers()
+        {
+            Console.WriteLine("Task 3");
+
+            Console.WriteLine("Write first number");
+            int firstNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write second number");
+            int secondNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write third number");
+            int thirdNumber = int.Parse(Console.ReadLine());
+
+            int[] numbers = Lesson3.sortTreeNumbers(firstNumber, secondNumber, thirdNumber);
+
+            Helper.printArray(numbers);
+        }
+        #endregion
+        #region Task4
+        private static void findRoots()
+        {
+            Console.WriteLine("Task 4");
+
+            Console.WriteLine("Write first number(a)");
+            double firstNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write second number(b)");
+            double secondNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write third number(c)");
+            double thirdNumber = double.Parse(Console.ReadLine());
+
+        }
         #endregion
 
         #endregion
-
         static void Main(string[] args)
         {
             #region Lesson1
@@ -178,6 +243,11 @@ namespace Homework
             //comparisonOfNumbersOfChills();
             //reverseFirstAndLastNumber();
             //checkZeroFractionalPart();
+            #endregion
+            #region Lesson3
+            countTwoNumber();
+            getWhatQuarterIsNumberIn();
+            sortTreeNumbers();
             #endregion
         }
     }
