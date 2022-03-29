@@ -16,7 +16,6 @@ namespace Homework
         {
             return heigth * wide;
         }
-
         public static int GetPerimetr(int side)
         {
             return side * 4;
@@ -25,20 +24,19 @@ namespace Homework
         {
             return (heigth + wide) * 2;
         }
-
-        public static double GetSin(double AB, double BC, double AC)
+        public static double GetSin(double BC, double AC)
         {
             return Math.Round(BC / AC, 2);
         }
-        public static double GetCos(double AB, double BC, double AC)
+        public static double GetCos(double AB, double AC)
         {
             return Math.Round(AB / AC, 2);
         }
-        public static double GetTg(double AB, double BC, double AC)
+        public static double GetTg(double AB, double BC)
         {
             return Math.Round(BC / AB, 2);
         }
-        public static double GetCtg(double AB, double BC, double AC)
+        public static double GetCtg(double AB, double AC)
         {
             return Math.Round(AB / AC, 2);
         }
