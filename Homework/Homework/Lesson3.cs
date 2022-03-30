@@ -106,11 +106,11 @@ namespace Homework
             }
             return numbers;
         }
-        private static double findDiscriminant(int firstNumber, int secondNumber, int thirdNumber)
+        private static double findDiscriminant(double firstNumber, double secondNumber, double thirdNumber)
         {
             return Math.Pow(secondNumber, 2) - (4 * firstNumber * thirdNumber);
         }
-        private static double[] findIfTwoRoots(int firstNumber, int secondNumber, double Discriminant)
+        private static double[] findIfTwoRoots(double firstNumber, double secondNumber, double Discriminant)
         {
             double[] roots = new double[2];
             double resulFirst = (-secondNumber + Math.Sqrt(Discriminant)) / (2 * firstNumber);
@@ -119,16 +119,17 @@ namespace Homework
             roots[1] = resulSecond;
             return roots;
         }
-        private static double[] findIfOneRoots(int firstNumber, int secondNumber)
+        private static double[] findIfOneRoots(double firstNumber, double secondNumber)
         {
             double[] root = new double[1];
             root[0] = -secondNumber / (2 * firstNumber);
             return root;
         }
-        public static double[] findRoots(int firstNumber, int secondNumber)
+        public static double[] findRoots(double firstNumber, double secondNumber, double thirdNumber)
         {
-            
-            if (findDiscriminant(firstNumber, secondNumber) != 0)
+            double Discriminant = findDiscriminant(firstNumber, secondNumber, thirdNumber);
+
+            if (Discriminant != 0)
             {
                 if (Discriminant < 0)
                 { 
@@ -142,122 +143,100 @@ namespace Homework
             else
             {
                 return findIfOneRoots(firstNumber, secondNumber);
-
             }
         }
-        public static void lesson3()
+        public static string renameNumbersAsStrind(int number)
         {
-
-            // Task 5 //
-
-            Console.WriteLine("Task 5");
-
             int ten = 10;
 
-            Console.WriteLine("Write number");
-            int firstNumberForFifthTask = int.Parse(Console.ReadLine());
-
-            int dozens = firstNumberForFifthTask / ten;
-            int units = firstNumberForFifthTask - dozens * ten;
+            int dozens = number / ten;
+            int units = number - dozens * ten;
 
             if (dozens == 1)
             {
                 units = 0;
             }
 
+            string result = "Ноль";
 
-            switch (firstNumberForFifthTask)
+            switch (number)
             {
                 case 11:
-                    Console.Write("Одиннадцать");
-                    break;
+                    return "Одиннадцать";
                 case 12:
-                    Console.Write("Двенадцать");
-                    break;
+                    return "Двенадцать";
                 case 13:
-                    Console.Write("Тринадцать");
-                    break;
+                    return "Тринадцать";
                 case 14:
-                    Console.Write("Четырнадцать");
-                    break;
+                    return "Четырнадцать";
                 case 15:
-                    Console.Write("Пятнадцать");
-                    break;
+                    return "Пятнадцать";
                 case 16:
-                    Console.Write("Шестнадцать");
-                    break;
+                    return "Шестнадцать";
                 case 17:
-                    Console.Write("Семнадцать");
-                    break;
+                    return "Семнадцать";
                 case 18:
-                    Console.Write("Восемнадцать");
-                    break;
+                    return "Восемнадцать";
                 case 19:
-                    Console.Write("Девятнадцать");
-                    break;
+                    return "Девятнадцать";
             }
 
             switch (dozens)
             {
                 case 2:
-                    Console.Write("Двадцать");
+                    result = "Двадцать";
                     break;
                 case 3:
-                    Console.Write("Тридцать");
+                    result = "Тридцать";
                     break;
                 case 4:
-                    Console.Write("Сорок");
+                    result = "Сорок";
                     break;
                 case 5:
-                    Console.Write("Пятьдесят");
+                    result = "Пятьдесят";
                     break;
                 case 6:
-                    Console.Write("Шестьдесят");
+                    result = "Шестьдесят";
                     break;
                 case 7:
-                    Console.Write("Семьдесят");
+                    result = "Семьдесят";
                     break;
                 case 8:
-                    Console.Write("Восемьдесят");
+                    result = "Восемьдесят";
                     break;
                 case 9:
-                    Console.Write("Девяносто");
+                    result = "Девяносто";
                     break;
             }
 
             switch (units)
             {
                 case 1:
-                    Console.WriteLine(" один");
-                    break;
+                    return result += " один";
                 case 2:
-                    Console.WriteLine(" два");
-                    break;
+                    return result += " два";
                 case 3:
-                    Console.WriteLine(" три");
-                    break;
+                    return result += " три";
                 case 4:
-                    Console.WriteLine(" четыре");
-                    break;
+                    return result += " четыре";
                 case 5:
-                    Console.WriteLine(" пять");
-                    break;
+                    return result += " пять";
                 case 6:
-                    Console.WriteLine(" шесть");
-                    break;
+                    return result += " шесть";
                 case 7:
-                    Console.WriteLine(" семь");
-                    break;
+                    return result += " семь";
                 case 8:
-                    Console.WriteLine(" восемь");
-                    break;
+                    return result += " восемь";
                 case 9:
-                    Console.WriteLine(" девять");
-                    break;
-
+                    return result += " девять";
             }
+            return result;
+        }
+        public static void lesson3()
+        {
 
-            Console.ReadLine();
+            // Task 5 //
+
 
             // Task 6 //
 

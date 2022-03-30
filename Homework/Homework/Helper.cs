@@ -10,9 +10,18 @@ namespace Homework
     {
         public static void printArray(int[] array)
         {
-            for (int i = 0; i < array.Length; i++)     // обход строк
+            for (int i = 0; i < array.Length; i++) 
             {
-                    Console.Write($"{array[i]}\t");
+                    Console.Write($"{array[i]}");
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+        public static void printArray(double[] array)
+        {
+            for (int i = 0; i < array.Length; i++)     
+            {
+                Console.Write($"{Math.Round(array[i],2)}");
                 Console.WriteLine();
             }
             Console.ReadLine();

@@ -217,15 +217,38 @@ namespace Homework
         {
             Console.WriteLine("Task 4");
 
-            Console.WriteLine("Write first number(a)");
+            Console.Write("Write first number(a): ");
             double firstNumber = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Write second number(b)");
+            Console.Write("Write second number(b): ");
             double secondNumber = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Write third number(c)");
+            Console.Write("Write third number(c): ");
             double thirdNumber = double.Parse(Console.ReadLine());
 
+            double[] numbers = Lesson3.findRoots(firstNumber, secondNumber, thirdNumber);
+
+            if (numbers == null)
+            {
+                Console.WriteLine("No roots");
+                Console.ReadLine();
+            }
+            else
+            {
+                Helper.printArray(numbers);
+            }
+        }
+        #endregion
+        #region Task5
+        private static void renameNumbersAsString()
+        {
+            Console.WriteLine("Task 5");
+
+            Console.Write("Write number: ");
+            int number = int.Parse(Console.ReadLine());
+            string result = Lesson3.renameNumbersAsStrind(number);
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
         #endregion
 
@@ -245,10 +268,14 @@ namespace Homework
             //checkZeroFractionalPart();
             #endregion
             #region Lesson3
-            countTwoNumber();
-            getWhatQuarterIsNumberIn();
-            sortTreeNumbers();
+            //countTwoNumber();
+            //getWhatQuarterIsNumberIn();
+            //sortTreeNumbers();
+            //findRoots();
+            //renameNumbersAsString();
             #endregion
+
+
         }
     }
 }
