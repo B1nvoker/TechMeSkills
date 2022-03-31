@@ -232,77 +232,41 @@ namespace Homework
             }
             return result;
         }
-        public static void lesson3()
+        public static bool checkIfTriagle(double firstNumber, double secondNumber, double thirdNumber)
         {
-
-            // Task 5 //
-
-
-            // Task 6 //
-
-            Console.WriteLine("Task 6");
-
-            Console.WriteLine("Write first number(a)");
-            double firstNumberForSixthTask = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Write second number(b)");
-            double secondNumberForSixthTask = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Write third number(c)");
-            double thirdNumberForSixthTask = double.Parse(Console.ReadLine());
-
-            bool state = firstNumberForSixthTask + secondNumberForSixthTask > thirdNumberForSixthTask && firstNumberForSixthTask + thirdNumberForSixthTask > secondNumberForSixthTask && secondNumberForSixthTask + thirdNumberForSixthTask > firstNumberForSixthTask;
-
-            if (state)
-            {
-                Console.WriteLine("Triangle exists");
-                Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("Triangle doesn't exists");
-                Console.ReadLine();
-            }
-
-            // Task 7 //
-
-            Console.WriteLine("Task 7");
-
-            Console.WriteLine("Write X");
-
-            double firstNumberForSeventhTask = double.Parse(Console.ReadLine());
-
+            return firstNumber + secondNumber > thirdNumber && firstNumber + thirdNumber > secondNumber && secondNumber + thirdNumber > firstNumber;
+        }
+        public static string whereYInGraph(double firstNumber)
+        {
             double result = 0;
 
-            if (firstNumberForSeventhTask < -7 && firstNumberForSeventhTask > 6)
+            if (firstNumber < -7 && firstNumber > 6)
             {
-                Console.WriteLine("функция не определена");
-                Console.ReadLine();
+               return "функция не определена";
             }
             else
             {
-                if (firstNumberForSeventhTask >= -7 && firstNumberForSeventhTask < -6)
+                if (firstNumber >= -7 && firstNumber < -6)
                 {
                     result = -3;
                 }
-                else if (firstNumberForSeventhTask >= -6 && firstNumberForSeventhTask < -3)
+                else if (firstNumber >= -6 && firstNumber < -3)
                 {
-                    result = firstNumberForSeventhTask + 3;
+                    result = firstNumber + 3;
                 }
-                else if (firstNumberForSeventhTask >= -3 && firstNumberForSeventhTask < 0)
+                else if (firstNumber >= -3 && firstNumber < 0)
                 {
-                    result = Math.Sqrt(9 - Math.Pow(firstNumberForSeventhTask, 2));
+                    result = Math.Sqrt(9 - Math.Pow(firstNumber, 2));
                 }
-                else if (firstNumberForSeventhTask >= 0 && firstNumberForSeventhTask < 3)
+                else if (firstNumber >= 0 && firstNumber < 3)
                 {
-                    result = 3 - firstNumberForSeventhTask;
+                    result = 3 - firstNumber;
                 }
-                else if (firstNumberForSeventhTask >= 3 && firstNumberForSeventhTask <= 6)
+                else if (firstNumber >= 3 && firstNumber <= 6)
                 {
-                    result = firstNumberForSeventhTask - 3;
+                    result = firstNumber - 3;
                 }
-                Console.WriteLine($"Y = {result}");
-                Console.ReadLine();
+                return $"Y = {result}";
             }
         }  
     }

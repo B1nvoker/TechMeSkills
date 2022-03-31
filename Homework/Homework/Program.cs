@@ -251,6 +251,77 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
+        #region Task6
+        private static void checkIftriagle()
+        {
+            Console.WriteLine("Task 6");
+
+            Console.WriteLine("Write first number(a)");
+            double firstNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write second number(b)");
+            double secondNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Write third number(c)");
+            double thirdNumber = double.Parse(Console.ReadLine());
+
+            bool state = Lesson3.checkIfTriagle(firstNumber, secondNumber, thirdNumber);
+
+            if (state)
+            {
+                Console.WriteLine("Triangle exists");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Triangle doesn't exists");
+                Console.ReadLine();
+            }
+        }
+        #endregion
+        #region Task7
+        private static void whereYInGraph()
+        {
+            Console.WriteLine("Task 7");
+
+            Console.WriteLine("Write X");
+
+            double firstNumber= double.Parse(Console.ReadLine());
+            string res = Lesson3.whereYInGraph(firstNumber);
+            Console.WriteLine(res);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #endregion
+
+        #region Lesson4
+
+        #region Task1
+        private static void getNumbersDivideOnNumber()
+        {
+            Console.WriteLine("Task 1");
+
+            Console.Write("Write a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            int[] arr = Lesson4.getArrOfNumbersDivOnNumber(number);
+
+            Helper.printArray(arr);
+        }
+        #endregion
+        #region Task2
+        private static void countSquareOfNumbers()
+        {
+            Console.WriteLine("\nTask 2\n");
+            Console.Write("Write a number: ");
+            int numberForSecondTask = int.Parse(Console.ReadLine());
+
+            Console.Write("Result: ");
+            Console.WriteLine(resultForSecondTask);
+            Console.ReadLine();
+        }  
+        #endregion
 
         #endregion
         static void Main(string[] args)
@@ -273,6 +344,11 @@ namespace Homework
             //sortTreeNumbers();
             //findRoots();
             //renameNumbersAsString();
+            //checkIftriagle();
+            //whereYInGraph();
+            #endregion
+            #region Lesson3
+            //getNumbersDivideOnNumber();
             #endregion
 
 
