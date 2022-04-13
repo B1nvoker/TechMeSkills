@@ -311,16 +311,72 @@ namespace Homework
         }
         #endregion
         #region Task2
-        private static void countSquareOfNumbers()
+        private static void getCountOfPositiveNumbersInArray()
         {
             Console.WriteLine("\nTask 2\n");
             Console.Write("Write a number: ");
-            int numberForSecondTask = int.Parse(Console.ReadLine());
-
+            int number = int.Parse(Console.ReadLine());
+            int result = Lesson4.getCountOfPositiveNumbersInArray(number);
             Console.Write("Result: ");
-            Console.WriteLine(resultForSecondTask);
+            Console.WriteLine(result);
             Console.ReadLine();
-        }  
+        }
+        #endregion
+
+        #region Task3
+        private static void geLargestDivisor()
+        {
+            Console.WriteLine("\nTask 3\n");
+            Console.Write("Write a number: ");
+            int number = int.Parse(Console.ReadLine());
+            int result = Lesson4.geLargestDivisor(number);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #region Task4
+        private static void getSumOfNumbersThatDivOnSeven()
+        {
+            Console.WriteLine("\nTask 4\n");
+            Console.Write("Write first number: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+            int result = Lesson4.getSumOfNumbersThatDivOnSeven(firstNumber, secondNumber);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #region Task5
+        private static void hetLargestGeneralDivider()
+        {
+            Console.WriteLine("\nTask 5\n");
+            Console.Write("Write first number: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+            int result = Lesson4.getLargestGeneralDivider(firstNumber, secondNumber);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #region Task7
+        private static void getNumberOfOddDigits()
+        {
+            Console.WriteLine("\nTask 7\n");
+            Console.Write("Write number: ");
+            int number = int.Parse(Console.ReadLine());
+            int result = Lesson4.getNumberOfOddDigits(number);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
         #endregion
 
         #endregion
@@ -347,8 +403,12 @@ namespace Homework
             //checkIftriagle();
             //whereYInGraph();
             #endregion
-            #region Lesson3
+            #region Lesson4
             //getNumbersDivideOnNumber();
+            //getCountOfPositiveNumbersInArray();
+            //geLargestDivisor();
+            //getSumOfNumbersThatDivOnSeven();
+            //getNumberOfOddDigits();
             #endregion
 
 
