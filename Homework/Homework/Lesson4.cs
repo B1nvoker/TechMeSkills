@@ -109,94 +109,77 @@ namespace Homework
             }
             return result;
         }
-        public static void les4()
+        public static int getReverseOfNumber(int number)
         {
+            int temp = 1;
+            int digits = (int)Math.Log10(number);
+            int temp2 = (int)Math.Pow(10, digits);
+            int result = 0;
+            while (temp < number)
             {
-                Console.WriteLine("\nTask 8\n");
-                Console.Write("Write number: ");
-                int numberForSevethTask = int.Parse(Console.ReadLine());
-                int firstTempForSevenththTask = 1;
-                int digits = (int)Math.Log10(numberForSevethTask);
-                int secondTempForSevenththTask = (int)Math.Pow(10, digits);
-                int resultForSeventhTask = 0;
-                while (firstTempForSevenththTask < numberForSevethTask)
-                {
-                    int digit = numberForSevethTask / firstTempForSevenththTask % 10;
-                    resultForSeventhTask += digit * secondTempForSevenththTask;
-                    firstTempForSevenththTask *= 10;
-                    secondTempForSevenththTask /= 10;
-                }
-                Console.Write("Result: ");
-                Console.WriteLine(resultForSeventhTask);
-                Console.ReadLine();
-
-
-                Console.WriteLine("\nTask 9\n");
-                Console.Write("Write number: ");
-                int numberForEighthTask = int.Parse(Console.ReadLine());
-                Console.Write("Result: ");
-                for (int i = 1; i <= numberForEighthTask; i++)
-                {
-                    int firstTempForEighthththTask = 1;
-                    int sumOfEvenNumbers = 0;
-                    int sumOfOddDigits = 0;
-
-                    while (firstTempForEighthththTask <= i)
-                    {
-                        int digit = i / firstTempForEighthththTask % 10;
-                        if (digit % 2 == 0)
-                        {
-                            sumOfEvenNumbers += digit;
-                        }
-                        else
-                        {
-                            sumOfOddDigits += digit;
-                        }
-
-                        firstTempForEighthththTask *= 10;
-                    }
-                    if (sumOfEvenNumbers > sumOfOddDigits)
-                    {
-                        Console.Write($"{i} ");
-                    }
-                }
-                Console.ReadLine();
-
-
-                Console.WriteLine("\nTask 10\n");
-                Console.Write("Write first number: ");
-                int firstNumberForTenthTask = int.Parse(Console.ReadLine());
-                Console.Write("Write second number: ");
-                int secondNumberForTenthTask = int.Parse(Console.ReadLine());
-                bool result = false;
-                int firstTempForTenthththTask = 1;
-                int secondTempForTenthththTask = 1;
-
-                while (firstTempForTenthththTask <= firstNumberForTenthTask)
-                {
-                    int digit = firstNumberForTenthTask / firstTempForTenthththTask % 10;
-                    while (secondTempForTenthththTask <= secondNumberForTenthTask)
-                    {
-                        int digit2 = secondNumberForTenthTask / secondTempForTenthththTask % 10;
-                        secondTempForTenthththTask *= 10;
-                        if (digit == digit2)
-                        {
-                            result = true;
-                            break;
-                        }
-                    }
-                    if (result)
-                    {
-                        break;
-                    }
-                    secondTempForTenthththTask = 1;
-                    firstTempForTenthththTask *= 10;
-                }
-                Console.Write("Result: ");
-                Console.WriteLine(result);
-                Console.ReadLine();
-
+                int digit = number / temp % 10;
+                result += digit * temp2;
+                temp *= 10;
+                temp2 /= 10;
             }
+            return result;
+        }
+        public static void getNumbersSumOfDigits(int number)
+        {
+            for (int i = 1; i <= number; i++)
+            {
+                int temp = 1;
+                int sumOfEvenNumbers = 0;
+                int sumOfOddDigits = 0;
+
+                while (temp <= i)
+                {
+                    int digit = i / temp % 10;
+                    if (digit % 2 == 0)
+                    {
+                        sumOfEvenNumbers += digit;
+                    }
+                    else
+                    {
+                        sumOfOddDigits += digit;
+                    }
+
+                    temp *= 10;
+                }
+                if (sumOfEvenNumbers > sumOfOddDigits)
+                {
+                    Console.Write($"{i} ");
+                }
+            }
+        }
+
+        public static bool getTrueIfTheSameDigits(int firstNumber, int secondNumber)
+        {
+            bool result = false;
+            int firstTemp= 1;
+            int secondTemp = 1;
+
+            while (firstTemp <= firstNumber)
+            {
+                int digit = firstNumber / firstTemp % 10;
+                while (secondTemp <= secondNumber)
+                {
+                    int digit2 = secondNumber / secondTemp % 10;
+                    secondTemp *= 10;
+                    if (digit == digit2)
+                    {
+                        result = true;
+                        return result;
+                    } 
+                }
+                if (result)
+                {
+                    break;
+                }
+                secondTemp = 1;
+                firstTemp *= 10;
+            }
+            return result;
         }
     }
 }

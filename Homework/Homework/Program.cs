@@ -322,7 +322,6 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
-
         #region Task3
         private static void geLargestDivisor()
         {
@@ -335,7 +334,6 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
-
         #region Task4
         private static void getSumOfNumbersThatDivOnSeven()
         {
@@ -350,7 +348,6 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
-
         #region Task5
         private static void hetLargestGeneralDivider()
         {
@@ -365,7 +362,6 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
-
         #region Task7
         private static void getNumberOfOddDigits()
         {
@@ -378,6 +374,51 @@ namespace Homework
             Console.ReadLine();
         }
         #endregion
+        #region Task8
+        private static void getReverseOfNumber()
+        {
+            Console.WriteLine("\nTask 8\n");
+            Console.Write("Write number: ");
+            int number = int.Parse(Console.ReadLine());
+            int result = Lesson4.getReverseOfNumber(number);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #region Task9
+        private static void getNumbersSumOfDigits()
+        {
+            Console.WriteLine("\nTask 9\n");
+            Console.Write("Write number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Result: ");
+            Lesson4.getNumbersSumOfDigits(number);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #region Task10
+        private static void getTrueIfTheSameDigits()
+        {
+            Console.WriteLine("\nTask 10\n");
+            Console.Write("Write first number: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.Write("Write second number: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+            bool result = Lesson4.getTrueIfTheSameDigits(firstNumber, secondNumber);
+            Console.Write("Result: ");
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+        #endregion
+
+        #endregion
+
+        #region Lesson5
+
+
 
         #endregion
         static void Main(string[] args)
@@ -408,7 +449,16 @@ namespace Homework
             //getCountOfPositiveNumbersInArray();
             //geLargestDivisor();
             //getSumOfNumbersThatDivOnSeven();
+            //hetLargestGeneralDivider();
             //getNumberOfOddDigits();
+            //getReverseOfNumber();
+            //getNumbersSumOfDigits();
+            //getTrueIfTheSameDigits();
+            #endregion
+            #region Lesson5
+
+
+
             #endregion
 
 
