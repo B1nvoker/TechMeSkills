@@ -23,13 +23,5 @@ namespace Lesson10
             IsActive = isActive;
         }
 
-        public void verifyLengthOfSerial(int serial)
-        {
-
-        }
-        public void verifyLengthOfNumber(int number)
-        {
-
-        }
     }
 }

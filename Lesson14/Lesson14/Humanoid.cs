@@ -10,17 +10,22 @@ namespace Lesson14
 
     internal class Humanoid : Creature
     {
-        private string[] type_texts = { "другой", "гоблиноид", "дракон", "механизм", "нежить", "тварь", "мутант", "волшебная тварь","энергетический", "фея" };
-        private int _intellect;
 
+        private int _intellect = 10;
         private Inventar _inventar;
-        
+
         public HumanoidType Type { get; set; }
+        public Inventar Inventar { get { return _inventar; } set { _inventar = value; } }
+        public int Intelect { get { return _intellect; } set { _intellect = value; } }
 
-
-        public override int push()
+        public Humanoid(string name, HumanoidType type)
+            :base(name)
         {
-            throw new NotImplementedException();
+            Type = type;
+        }
+        public override void Push(Creature creature)
+        {
+            creature.CurrentHp -= 20;
         }
     }
 }

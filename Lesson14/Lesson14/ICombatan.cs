@@ -8,5 +8,11 @@ namespace Lesson14
 {
     internal interface ICombatan
     {
+        void Push(Creature creature);
+        void Atack(Creature creature);
+
+        int Min_attack { get; set; }
+        int Max_attack { get; set; }
+
     }
 }
