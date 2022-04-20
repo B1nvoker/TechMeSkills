@@ -18,11 +18,9 @@ namespace Lesson14
             private int min_attack;
             private int max_attack;
 
-            private string[] type_texts = { "другой", "гоблиноид", "дракон", "механизм", "нежить", "тварь", "мутант", "волшебная тварь",
-            "энергетический", "фея" };
-            private Random random;
+            private readonly string[] type_texts = { "другой", "гоблиноид", "дракон", "механизм", "нежить", "тварь", "мутант", "волшебная тварь", "энергетический", "фея" };
+        private readonly Random random;
 
-            
             public MonsterType Type { get; set; }       // авто-свойство
             
             public int HP
@@ -98,25 +96,14 @@ namespace Lesson14
             {
                 return random.Next(Min_attack, Max_attack + 1) + bonus;
             }
-
-            public void Wound(int damage)
-            {
-                HP -= damage;   // см. реализацию свойства HP - там уже обработаны выходы за границы HP
-            }
-
-            public void Heal()
-            {
-                HP = MaxHP;
-            }
-
             public void Atack(Creature creature)
             {
-                throw new NotImplementedException();
+                creature.CurrentHp -= 20;
             }
 
             public override void Push(Creature creature)
             {
-                throw new NotImplementedException();
+                creature.CurrentHp -= 20;
             }
         }
     }
